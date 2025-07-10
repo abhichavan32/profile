@@ -1,0 +1,73 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8 animate__animated animate__fadeInUp">
+            <h2 class="mb-4 text-gradient">About Me</h2>
+            <div class="card bg-dark text-white border-danger animate__animated animate__fadeIn animate__delay-1s">
+                <div class="card-body">
+                    <h3 class="slide-in">Professional Summary</h3>
+                    <p class="fade-in">I am a passionate full-stack developer with expertise in Python, Django, and web technologies.</p>
+                    
+                    <h3 class="mt-4 slide-in">Skills</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="skill-list">
+                                <li class="skill-item">Python/Django</li>
+                                <li class="skill-item">java</li>
+                                <li class="skill-item">HTML5/CSS3</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="skill-list">
+                                <li class="skill-item">Database Management</li>
+                                <li class="skill-item">RESTful APIs</li>
+                                <li class="skill-item">Version Control (Git)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .skill-list {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .skill-item {
+        padding: 10px;
+        margin: 5px 0;
+        border-left: 3px solid #ff0000;
+        background: rgba(255, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .skill-item:hover {
+        transform: translateX(10px);
+        background: rgba(255, 0, 0, 0.2);
+    }
+
+    .slide-in {
+        animation: slideIn 1s ease forwards;
+    }
+
+    .fade-in {
+        animation: fadeIn 1.5s ease forwards;
+    }
+
+    @keyframes slideIn {
+        from { transform: translateX(-50px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+</style>
+{% endblock %}

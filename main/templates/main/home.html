@@ -1,0 +1,106 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="row min-vh-100 align-items-center">
+    <div class="col-md-6 animate__animated animate__fadeInLeft">
+        <h1 class="display-4 mb-4 text-gradient">Hello, I'm <span class="highlight-text">Abhishek Chavan</span></h1>
+        <h2 class="typed-text mb-4"></h2>
+        <p class="lead mb-4">Transforming ideas into elegant digital solutions through creative development.</p>
+        <div class="d-flex gap-3">
+            <a href="{% url 'projects' %}" class="btn btn-custom btn-lg animate__animated animate__pulse animate__infinite">View My Work</a>
+            <a href="{% url 'contact' %}" class="btn btn-outline-danger btn-lg">Let's Connect</a>
+        </div>
+        <div class="social-links mt-5">
+            <a href="https://github.com/abhichavan32" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/abhishek-chavan-774a32254/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/abhi_chavan___/" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+    <div class="col-md-6 animate__animated animate__fadeInRight">
+        <div class="tech-stack">
+            <div class="tech-item"><i class="fab fa-python"></i></div>
+            <div class="tech-item"><i class="fab fa-java"></i></div>
+            <div class="tech-item"><i class="fab fa-html5"></i></div>
+            <div class="tech-item"><i class="fab fa-css3-alt"></i></div>
+            <div class="tech-item"><i class="fab fa-bootstrap"></i></div>
+            <div class="tech-item"><i class="fas fa-database"></i></div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .text-gradient {
+        background: linear-gradient(45deg, #ff0000, #ff6b6b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradient 3s ease infinite;
+    }
+
+    .highlight-text {
+        color: #ff0000;
+        font-weight: bold;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    .social-icon {
+        color: #ffffff;
+        font-size: 24px;
+        transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+        color: #ff0000;
+        transform: translateY(-5px);
+    }
+
+    .tech-stack {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .tech-item {
+        background: rgba(255, 0, 0, 0.1);
+        border: 1px solid #ff0000;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .tech-item i {
+        font-size: 40px;
+        color: #ff0000;
+    }
+
+    .tech-item:hover {
+        transform: scale(1.1);
+        background: rgba(255, 0, 0, 0.2);
+    }
+
+    @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var typed = new Typed('.typed-text', {
+            strings: ['Full Stack Developer', 'Python Developer', 'Web Designer'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true
+        });
+    });
+</script>
+{% endblock %}
